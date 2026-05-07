@@ -3,59 +3,714 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Builders 资讯速递 - 2026年05月07日</title>
+  <title>AI Builders 资讯速递 - 2026年5月7日</title>
   <style>
     :root {
-      --color-bg: #ffffff; --color-surface: #f9fafb; --color-text: #1a1a1a;
-      --color-text-muted: #6b7280; --color-accent: #2563eb; --color-border: #e5e7eb;
-      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+      --color-bg: #ffffff;
+      --color-surface: #f9fafb;
+      --color-surface-alt: #f0f4ff;
+      --color-text: #1a1a1a;
+      --color-text-muted: #6b7280;
+      --color-accent: #2563eb;
+      --color-accent-light: #3b82f6;
+      --color-border: #e5e7eb;
+      --color-success: #16a34a;
+      --color-warning: #d97706;
+      --color-danger: #dc2626;
+      --color-purple: #7c3aed;
+      --color-orange: #ea580c;
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --color-bg: #111827; --color-surface: #1f2937; --color-text: #f3f4f6;
-        --color-text-muted: #9ca3af; --color-accent: #60a5fa; --color-border: #374151;
+        --color-bg: #111827;
+        --color-surface: #1f2937;
+        --color-surface-alt: #1e2a4a;
+        --color-text: #f3f4f6;
+        --color-text-muted: #9ca3af;
+        --color-accent: #60a5fa;
+        --color-accent-light: #93bbfd;
+        --color-border: #374151;
+        --color-success: #4ade80;
+        --color-warning: #fbbf24;
+        --color-danger: #f87171;
+        --color-purple: #a78bfa;
+        --color-orange: #fb923c;
       }
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: var(--font-family); font-size: 15px; color: var(--color-text); line-height: 1.8; padding: 32px 24px; max-width: 780px; margin: 0 auto; background: var(--color-bg); }
-    .header { border-bottom: 2px solid var(--color-accent); padding-bottom: 16px; margin-bottom: 28px; }
-    .header h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; }
-    .header .sub { font-size: 13px; color: var(--color-text-muted); }
-    .back-link { display: inline-block; margin-bottom: 16px; color: var(--color-accent); text-decoration: none; font-size: 13px; }
-    .back-link:hover { text-decoration: underline; }
-    h2.section-title { font-size: 18px; font-weight: 600; margin: 24px 0 12px; color: var(--color-text); }
-    blockquote { background: var(--color-surface); border-left: 3px solid var(--color-accent); padding: 10px 16px; margin: 8px 0; border-radius: 4px; font-size: 14px; color: var(--color-text-muted); word-break: break-word; }
-    .builder-name { font-weight: 600; margin-top: 16px; }
-    .item { margin: 8px 0; padding-left: 16px; border-left: 2px solid var(--color-border); }
+    body {
+      font-family: var(--font-family);
+      font-size: 15px;
+      color: var(--color-text);
+      line-height: 1.8;
+      padding: 32px 24px;
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--color-bg);
+    }
     a { color: var(--color-accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    hr { border: none; border-top: 1px solid var(--color-border); margin: 20px 0; }
-    p { margin: 6px 0; }
-    .footer { margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--color-border); font-size: 12px; color: var(--color-text-muted); text-align: center; }
+    .back-link { display: inline-block; margin-bottom: 16px; color: var(--color-accent); font-size: 13px; }
+
+    /* Header */
+    .header {
+      border-bottom: 3px solid var(--color-accent);
+      padding-bottom: 20px;
+      margin-bottom: 28px;
+    }
+    .header h1 { font-size: 26px; font-weight: 700; margin-bottom: 4px; }
+    .header .sub { font-size: 14px; color: var(--color-text-muted); }
+    .header .stats {
+      display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap;
+    }
+    .header .stat {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      padding: 4px 12px;
+      font-size: 12px;
+      color: var(--color-text-muted);
+    }
+
+    /* TOC */
+    .toc {
+      background: var(--color-surface-alt);
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin-bottom: 32px;
+    }
+    .toc-title { font-size: 15px; font-weight: 600; margin-bottom: 10px; }
+    .toc ul { list-style: none; }
+    .toc li { font-size: 13px; margin-bottom: 6px; }
+    .toc li a { color: var(--color-accent); }
+    .toc li .toc-tag {
+      display: inline-block;
+      font-size: 11px;
+      padding: 1px 6px;
+      border-radius: 3px;
+      margin-left: 6px;
+      font-weight: 500;
+    }
+    .toc li .hot { background: #fef2f2; color: var(--color-danger); }
+    .toc li .new { background: #f0fdf4; color: var(--color-success); }
+    .toc li .insight { background: #eff6ff; color: var(--color-accent); }
+
+    /* Sections */
+    .section { margin-bottom: 36px; }
+    .section-title {
+      font-size: 19px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--color-border);
+    }
+
+    /* Cards */
+    .card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin-bottom: 16px;
+      transition: box-shadow 0.2s;
+    }
+    .card:hover {
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .card-hot {
+      border-left: 4px solid var(--color-danger);
+    }
+    .card-insight {
+      border-left: 4px solid var(--color-accent);
+    }
+    .card-blog {
+      border-left: 4px solid var(--color-purple);
+    }
+    .card-podcast {
+      border-left: 4px solid var(--color-orange);
+    }
+    .card-news {
+      border-left: 4px solid var(--color-success);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .card-name {
+      font-weight: 700;
+      font-size: 15px;
+    }
+    .card-role {
+      font-size: 12px;
+      color: var(--color-text-muted);
+      background: var(--color-bg);
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid var(--color-border);
+    }
+    .card-tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 500;
+      background: var(--color-surface-alt);
+      color: var(--color-accent);
+      border: 1px solid var(--color-border);
+    }
+    .tag-hot { background: #fef2f2; color: var(--color-danger); border-color: #fecaca; }
+    .tag-product { background: #f0fdf4; color: var(--color-success); border-color: #bbf7d0; }
+    .tag-infra { background: #fefce8; color: var(--color-warning); border-color: #fef08a; }
+    .tag-design { background: #faf5ff; color: var(--color-purple); border-color: #e9d5ff; }
+
+    .card-body {
+      font-size: 14px;
+      color: var(--color-text);
+      line-height: 1.75;
+      margin-bottom: 10px;
+    }
+    .card-body p { margin-bottom: 8px; }
+
+    .card-context {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      padding: 10px 14px;
+      font-size: 13px;
+      color: var(--color-text-muted);
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+    .card-context strong { color: var(--color-text); }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--color-text-muted);
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .engagement span { margin-right: 10px; }
+
+    /* Dividers */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--color-border);
+      margin: 28px 0;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 2px solid var(--color-border);
+      font-size: 12px;
+      color: var(--color-text-muted);
+    }
+    .footer p { margin-bottom: 4px; }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      body { padding: 16px; }
+      .header h1 { font-size: 22px; }
+      .card { padding: 14px 16px; }
+    }
   </style>
 </head>
 <body>
   <a href="../" class="back-link">&larr; 返回资讯速递列表</a>
+
   <div class="header">
     <h1>AI Builders 资讯速递</h1>
-    <div class="sub">2026年05月07日 (周四) | 追踪真正在做事的 AI Builder</div>
+    <div class="sub">2026年5月7日 (周三) | 追踪真正在做事的 AI Builder</div>
+    <div class="stats">
+      <span class="stat">19 位 Builder 动态</span>
+      <span class="stat">1 篇官方博客</span>
+      <span class="stat">1 期播客</span>
+      <span class="stat">5 条行业补充资讯</span>
+    </div>
   </div>
-  <blockquote>2026年05月07日 (周三) | 追踪真正在做事的 AI Builder</blockquote>
-<hr>
-<h2 class="section-title">🔥 高热度动态 (今日必看)</h2>
-<div class="builder-name">**Sam Altman** | OpenAI CEO</div>
-<p>📌 [话题: 产品发布/模型]</p>
-<blockquote>We are launching new voice capabilities today...</blockquote>
-<p>热度: 👍1200 🔄350 | [原文](https://x.com/test)</p>
-<h2 class="section-title">💡 Builder 洞察与观点</h2>
-<div class="item">**Andrej Karpathy** (前 Tesla AI / OpenAI) [话题: 编程/工程] 👍800</div>
-<blockquote>The best way to learn is to build something...</blockquote>
-<a href="https://x.com/test2" target="_blank">原文</a><br>
-<hr>
-<p>📊 本期数据: 25位Builder | 120条推文 | 2篇博客 | 1期播客</p>
 
+  <!-- 本期导航 -->
+  <div class="toc">
+    <div class="toc-title">本期导航</div>
+    <ul>
+      <li><a href="#hot">🔥 高热度动态</a> — Anthropic x SpaceX 算力合作 / Claude 太空计划 / Codex 势不可挡 <span class="toc-tag hot">必看</span></li>
+      <li><a href="#blog">📝 官方博客</a> — Claude 托管 Agent 新功能：Dreaming 自我学习机制 <span class="toc-tag new">全新</span></li>
+      <li><a href="#insights">💡 Builder 洞察</a> — 7 位 Builder 的观点与行业思考 <span class="toc-tag insight">深度</span></li>
+      <li><a href="#podcast">🎧 播客精选</a> — 《AI & I》: 为什么我们从 Claude Code 转向了 Codex</li>
+      <li><a href="#news">📰 行业资讯补充</a> — DeepSeek V4 / AI 癌症检测突破 / a16z 融资</li>
+    </ul>
+  </div>
+
+  <!-- ===== 高热度动态 ===== -->
+  <div class="section" id="hot">
+    <h2 class="section-title">🔥 高热度动态 (今日必看)</h2>
+
+    <div class="card card-hot">
+      <div class="card-header">
+        <span class="card-name">Thariq (Anthropic)</span>
+        <span class="card-role">Anthropic 工程师</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag tag-hot">🔥 爆款</span>
+        <span class="tag tag-infra">算力基础设施</span>
+        <span class="tag tag-product">重大合作</span>
+      </div>
+      <div class="card-body">
+        <p><strong>"我们正在缩减高峰时段的限制，并将 5 小时使用上限翻倍。很兴奋与 SpaceX 合作，为大家带来更多的 Claude 算力！"</strong></p>
+        <p>这条推文获得超过 3,100 赞，是今日最高热度内容。Anthropic 和 SpaceX 达成重大算力合作协议。</p>
+      </div>
+      <div class="card-context">
+        <strong>背景解读：</strong>Anthropic 已与 SpaceX 签署协议，获得 Colossus 1 超级计算集群的全部算力（超过 300 兆瓦）。这意味着 Musk 的 xAI 将 Colossus 1 的算力"让"给了 Anthropic，而 xAI 自身转向使用更新的 Colossus 2。这一合作被《华尔街日报》和路透社等媒体广泛报道，标志着 AI 行业"算力军备竞赛"进入新阶段——曾经的竞争对手也开始在基础设施层面合作。
+      </div>
+      <div class="card-footer">
+        <div class="engagement">
+          <span>👍 3,108</span>
+          <span>🔄 110</span>
+        </div>
+        <a href="https://x.com/trq212" target="_blank">查看原文 &rarr;</a>
+      </div>
+    </div>
+
+    <div class="card card-hot">
+      <div class="card-header">
+        <span class="card-name">Thariq (Anthropic)</span>
+        <span class="card-role">Anthropic 工程师</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag tag-hot">🔥 热门</span>
+        <span class="tag">AI 太空探索</span>
+      </div>
+      <div class="card-body">
+        <p><strong>"Claude in Space 🤞"</strong> — 暗示 Claude 可能将用于太空场景的计划。</p>
+        <p>结合 SpaceX 合作背景，Anthropic 可能正在探索将 AI 能力拓展到航天领域，这代表了 AI 应用场景从地面到太空的重大延伸。</p>
+      </div>
+      <div class="card-footer">
+        <div class="engagement">
+          <span>👍 1,577</span>
+          <span>🔄 53</span>
+        </div>
+        <a href="https://x.com/trq212" target="_blank">查看原文 &rarr;</a>
+      </div>
+    </div>
+
+    <div class="card card-hot">
+      <div class="card-header">
+        <span class="card-name">Claude 官方账号</span>
+        <span class="card-role">Anthropic 官方</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag tag-hot">🔥 热门</span>
+        <span class="tag tag-product">创始人对话</span>
+      </div>
+      <div class="card-body">
+        <p><strong>Anthropic 联合创始人 Dario Amodei 和 Daniela Amodei 将进行一场公开对话</strong>，由首席产品官主持。这场对话将涵盖 Anthropic 的战略方向、AI 安全理念以及未来产品路线图。</p>
+        <p>同时，Claude 平台今日发布了新功能，详情见官方博客部分。</p>
+      </div>
+      <div class="card-footer">
+        <div class="engagement">
+          <span>👍 1,190</span>
+          <span>🔄 109</span>
+        </div>
+        <a href="https://x.com/claudeai" target="_blank">查看原文 &rarr;</a>
+      </div>
+    </div>
+
+    <div class="card card-hot">
+      <div class="card-header">
+        <span class="card-name">Alex Albert</span>
+        <span class="card-role">Anthropic 研究员</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag tag-hot">热门</span>
+        <span class="tag tag-infra">算力扩展</span>
+      </div>
+      <div class="card-body">
+        <p><strong>"更多芯片，更多 Claude"</strong> — 简洁有力地传递了 Anthropic 通过 SpaceX 合作获得大幅算力提升的信号。更多算力意味着更快的推理速度、更高的并发和更低的用户限制。</p>
+      </div>
+      <div class="card-footer">
+        <div class="engagement">
+          <span>👍 814</span>
+          <span>🔄 15</span>
+        </div>
+        <a href="https://x.com/alexalbert__" target="_blank">查看原文 &rarr;</a>
+      </div>
+    </div>
+
+    <div class="card card-hot">
+      <div class="card-header">
+        <span class="card-name">Aaron Levie</span>
+        <span class="card-role">Box CEO</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag tag-hot">热门</span>
+        <span class="tag tag-infra">行业分析</span>
+      </div>
+      <div class="card-body">
+        <p><strong>"SpaceX 作为垂直整合的 AI 算力公司，这个逻辑非常成立。"</strong></p>
+        <p>Aaron Levie 指出 SpaceX 拥有的独特优势：自建火箭降低卫星成本、数据中心选址灵活性、以及 Elon Musk 生态内的资源整合能力。这标志着 AI 算力的竞争已从科技巨头扩展到航天公司。</p>
+      </div>
+      <div class="card-footer">
+        <div class="engagement">
+          <span>👍 688</span>
+          <span>🔄 31</span>
+        </div>
+        <a href="https://x.com/levie" target="_blank">查看原文 &rarr;</a>
+      </div>
+    </div>
+
+    <div class="card card-hot">
+      <div class="card-header">
+        <span class="card-name">Peter Steinberger</span>
+        <span class="card-role">OpenClaw 联合创始人</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag tag-hot">热门</span>
+        <span class="tag">AI 编程工具</span>
+      </div>
+      <div class="card-body">
+        <p><strong>"闭源、开源，什么都挡不住 Codex。"</strong></p>
+        <p>Peter 对 OpenAI Codex 当前在 AI 编程领域的主导地位给出了极高评价。据 MightyBot 2026 年 4 月排名，Codex 已跃升为 AI 编程 Agent 第一名，其多 Agent 架构被认为是核心差异化优势。</p>
+      </div>
+      <div class="card-context">
+        <strong>延伸：</strong>imsg 0.6 + 0.7 版本也已发布，包含私有 API 桥接、Watch/历史可靠性修复、以及更好的聊天和账户管理体验。
+      </div>
+      <div class="card-footer">
+        <div class="engagement">
+          <span>👍 527</span>
+          <span>🔄 21</span>
+        </div>
+        <a href="https://x.com/steipete" target="_blank">查看原文 &rarr;</a>
+      </div>
+    </div>
+
+    <div class="card card-hot">
+      <div class="card-header">
+        <span class="card-name">Amanda Askell</span>
+        <span class="card-role">Anthropic 研究员</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag tag-hot">热门</span>
+        <span class="tag tag-product">产品发布</span>
+      </div>
+      <div class="card-body">
+        <p><strong>"从来没有 🚀 这个表情符号像现在这么贴切过。"</strong></p>
+        <p>Amanda 对 Anthropic 与 SpaceX 的合作表达了兴奋——Claude 即将借助 SpaceX 的算力"真正起飞"。这也是对 Anthropic 团队士气和信心的一次展示。</p>
+      </div>
+      <div class="card-footer">
+        <div class="engagement">
+          <span>👍 510</span>
+          <span>🔄 17</span>
+        </div>
+        <a href="https://x.com/AmandaAskell" target="_blank">查看原文 &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ===== 官方博客 ===== -->
+  <div class="section" id="blog">
+    <h2 class="section-title">📝 官方博客更新</h2>
+
+    <div class="card card-blog">
+      <div class="card-header">
+        <span class="card-name">Claude 官方博客</span>
+        <span class="card-role">Anthropic</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag tag-product">全新功能</span>
+        <span class="tag">Agent 自我学习</span>
+        <span class="tag">多 Agent 协作</span>
+      </div>
+      <div class="card-body">
+        <p><strong>《Claude 托管 Agent 新功能：Dreaming、Outcomes 和多 Agent 编排》</strong></p>
+        <p>今天发布的三大新功能：</p>
+        <p><strong>1. Dreaming（做梦）：</strong>作为研究预览推出。Dreaming 让 Agent 在空闲时回顾过去的会话记录，发现行为模式和改进空间。类似于人类在睡眠中巩固记忆，Agent 通过"做梦"实现自我进化——无需人工调优。据 Ars Technica 报道，这是"Agent 从被动工具走向主动学习者"的关键一步。</p>
+        <p><strong>2. Outcomes（结果评估）：</strong>新增标准化的任务结果评估框架，让开发者可以量化 Agent 的执行效果，建立反馈闭环。</p>
+        <p><strong>3. 多 Agent 编排：</strong>支持多个 Agent 协同工作，由一个 Agent 分配和协调其他 Agent 的任务，适用于复杂的企业级工作流。</p>
+      </div>
+      <div class="card-context">
+        <strong>行业影响：</strong>路透社报道称，Dreaming 功能的发布与 SpaceX 算力合作同日公布，显示 Anthropic 在同时推进"更强的算力"和"更聪明的 Agent"双线战略。XDA Developers 指出，Dreaming 此前曾被泄露，如今正式发布说明 Anthropic 的 Agent 路线图正在稳步推进。
+      </div>
+      <div class="card-footer">
+        <a href="https://claude.com/blog/new-in-claude-managed-agents" target="_blank">阅读博客全文 &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ===== Builder 洞察 ===== -->
+  <div class="section" id="insights">
+    <h2 class="section-title">💡 Builder 洞察与观点</h2>
+
+    <div class="card card-insight">
+      <div class="card-header">
+        <span class="card-name">Ryo Lu</span>
+        <span class="card-role">Cursor 设计师</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag tag-design">产品设计</span>
+        <span class="tag">开发者体验</span>
+      </div>
+      <div class="card-body">
+        <p><strong>"我们设计 Cursor 的理念是：清晰、可定制、深度可控。需要简洁时少看信息，需要深入时多看细节。"</strong></p>
+        <p>Ryo 阐述了 Cursor 编辑器的设计哲学——不是一味堆功能，而是让开发者自己决定 AI 辅助的"介入深度"。这是当前 AI 编程工具领域的一个重要设计趋势：从"AI 做主"转向"人类掌控"。</p>
+      </div>
+      <div class="card-footer">
+        <div class="engagement"><span>👍 320</span><span>🔄 13</span></div>
+        <a href="https://x.com/ryolu_" target="_blank">查看原文 &rarr;</a>
+      </div>
+    </div>
+
+    <div class="card card-insight">
+      <div class="card-header">
+        <span class="card-name">Matt Turck</span>
+        <span class="card-role">FirstMark Capital 合伙人</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag">风投行业</span>
+        <span class="tag">行业幽默</span>
+      </div>
+      <div class="card-body">
+        <p><strong>"当 VC 问你'有什么我能帮上忙的吗？'"</strong> — 一张爆款 meme 图，戳中了创业者和投资人之间微妙关系的痛点。266 赞说明了圈内人的共鸣程度。</p>
+      </div>
+      <div class="card-footer">
+        <div class="engagement"><span>👍 266</span><span>🔄 9</span></div>
+        <a href="https://x.com/mattturck" target="_blank">查看原文 &rarr;</a>
+      </div>
+    </div>
+
+    <div class="card card-insight">
+      <div class="card-header">
+        <span class="card-name">Google Labs 官方</span>
+        <span class="card-role">Google 实验室</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag tag-product">产品迭代</span>
+        <span class="tag">创作者社区</span>
+      </div>
+      <div class="card-body">
+        <p><strong>"在实验室，真正让我们兴奋的是当实验到达用户手中，我们能看到大家用它创造出什么。"</strong></p>
+        <p>Google Labs 分享了他们的产品理念：实验最大的价值不是技术本身，而是用户拿到工具后的创造力。这体现了从"技术驱动"到"用户共创"的转变。</p>
+      </div>
+      <div class="card-footer">
+        <div class="engagement"><span>👍 239</span><span>🔄 15</span></div>
+        <a href="https://x.com/GoogleLabs" target="_blank">查看原文 &rarr;</a>
+      </div>
+    </div>
+
+    <div class="card card-insight">
+      <div class="card-header">
+        <span class="card-name">Josh Woodward</span>
+        <span class="card-role">Google Labs VP</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag tag-product">音乐 x AI</span>
+        <span class="tag">创作者经济</span>
+      </div>
+      <div class="card-body">
+        <p><strong>"很高兴与全球最大音乐公司之一合作。艺术家们将能实验和探索全新的创作方式。"</strong></p>
+        <p>Google Labs 正在与大型唱片公司合作，将 AI 工具引入音乐创作流程。这标志着 AI 从文字和代码领域正式大规模进入音乐产业。</p>
+      </div>
+      <div class="card-footer">
+        <div class="engagement"><span>👍 200</span><span>🔄 9</span></div>
+        <a href="https://x.com/joshwoodward" target="_blank">查看原文 &rarr;</a>
+      </div>
+    </div>
+
+    <div class="card card-insight">
+      <div class="card-header">
+        <span class="card-name">Aditya Agarwal</span>
+        <span class="card-role">South Park Commons</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag">风投观察</span>
+        <span class="tag">创业困境</span>
+      </div>
+      <div class="card-body">
+        <p><strong>"风投行业最难的位置是：你是一家 Series A/B 公司，ARR 在 1000-2000 万美元，有 20-50 名员工，但增长停滞了。"</strong></p>
+        <p>Aditya 精准描述了 AI 创业公司的"死亡谷"——既不够小到可以转型，又不够大到有缓冲。175 赞说明这击中了很多创业者的痛点。</p>
+      </div>
+      <div class="card-footer">
+        <div class="engagement"><span>👍 175</span><span>🔄 7</span></div>
+        <a href="https://x.com/adityaag" target="_blank">查看原文 &rarr;</a>
+      </div>
+    </div>
+
+    <div class="card card-insight">
+      <div class="card-header">
+        <span class="card-name">Guillermo Rauch</span>
+        <span class="card-role">Vercel CEO</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag tag-product">安全工具</span>
+        <span class="tag">开发者工具</span>
+      </div>
+      <div class="card-body">
+        <p><strong>发布 deepsec —</strong> 通过 <code>npx deepsec</code> 即可运行的安全扫描工具。Vercel 持续在开发者工具链上发力，这次瞄准了应用安全领域，让安全扫描像运行 lint 一样简单。</p>
+      </div>
+      <div class="card-footer">
+        <div class="engagement"><span>👍 109</span><span>🔄 3</span></div>
+        <a href="https://x.com/rauchg" target="_blank">查看原文 &rarr;</a>
+      </div>
+    </div>
+
+    <div class="card card-insight">
+      <div class="card-header">
+        <span class="card-name">Zara Zhang</span>
+        <span class="card-role">Builder / follow-builders 作者</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag">开发者工具</span>
+        <span class="tag">市场机会</span>
+      </div>
+      <div class="card-body">
+        <p><strong>"很多开发者工具正在错失一个巨大的机会——它们的产品现在基本上对任何能访问它的人都有用了。"</strong></p>
+        <p>Zara 观察到，AI 让开发者工具的使用门槛大幅降低。过去只有程序员能用的工具，现在非技术用户也能上手。谁先意识到这一点并调整定位，谁就能打开更大的市场。</p>
+      </div>
+      <div class="card-footer">
+        <div class="engagement"><span>👍 88</span><span>🔄 7</span></div>
+        <a href="https://x.com/zarazhangrui" target="_blank">查看原文 &rarr;</a>
+      </div>
+    </div>
+
+    <div class="card card-insight">
+      <div class="card-header">
+        <span class="card-name">Dan Shipper</span>
+        <span class="card-role">Every CEO</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag tag-infra">行业快讯</span>
+      </div>
+      <div class="card-body">
+        <p><strong>"Anthropic 正在与 SpaceX 合作，使用 Colossus 超级计算集群的算力！用户的速率限制将翻倍！"</strong></p>
+        <p>Dan 从用户视角快速传递了这一消息的核心价值：对 Claude 用户来说，最直接的好处就是速率限制翻倍，意味着更流畅的使用体验。</p>
+      </div>
+      <div class="card-footer">
+        <div class="engagement"><span>👍 85</span><span>🔄 6</span></div>
+        <a href="https://x.com/danshipper" target="_blank">查看原文 &rarr;</a>
+      </div>
+    </div>
+
+    <div class="card card-insight">
+      <div class="card-header">
+        <span class="card-name">Amjad Masad</span>
+        <span class="card-role">Replit CEO</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag tag-product">合作</span>
+        <span class="tag">内容营销</span>
+      </div>
+      <div class="card-body">
+        <p><strong>Lenny x Replit</strong> — Amjad 分享了与知名产品播客 Lenny's Podcast 的合作内容。Replit 作为 AI 编程平台的领头羊之一，持续通过内容合作扩大影响力，触达更广的产品经理和创业者群体。</p>
+      </div>
+      <div class="card-footer">
+        <div class="engagement"><span>👍 57</span><span>🔄 3</span></div>
+        <a href="https://x.com/amasad" target="_blank">查看原文 &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ===== 播客 ===== -->
+  <div class="section" id="podcast">
+    <h2 class="section-title">🎧 播客精选</h2>
+
+    <div class="card card-podcast">
+      <div class="card-header">
+        <span class="card-name">AI & I by Every</span>
+        <span class="card-role">AI 播客</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag tag-product">工具对比</span>
+        <span class="tag">AI 编程</span>
+        <span class="tag">实战经验</span>
+      </div>
+      <div class="card-body">
+        <p><strong>本期主题：《为什么我们从 Claude Code 转向了 Codex》</strong></p>
+        <p>播客讨论了一个很有意思的转变：在 3-6 个月前，Codex 还被认为"是垃圾"，但现在已经成为团队的首选工具。核心讨论点包括：</p>
+        <p>- Codex 的多 Agent 架构如何改变了协作方式</p>
+        <p>- Claude Code 在哪些场景仍然更强</p>
+        <p>- 工具选择背后的工作流思考</p>
+        <p>- AI 编程工具的快速迭代对开发者意味着什么</p>
+      </div>
+      <div class="card-context">
+        <strong>延伸阅读：</strong>根据 NxCode 的 2026 年评测，OpenAI Codex 目前定价 $200/月，其云端自主编程能力和多 Agent 架构是主要卖点。Zack Proser 的使用报告指出，Codex 和所有 AI 编程工具一样"大幅提高了产出但需要理解其局限"。
+      </div>
+      <div class="card-footer">
+        <a href="https://www.youtube.com/watch?v=IDSAMqip6ms" target="_blank">观看完整播客 &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ===== 行业资讯补充 ===== -->
+  <div class="section" id="news">
+    <h2 class="section-title">📰 行业资讯补充</h2>
+
+    <div class="card card-news">
+      <div class="card-body">
+        <p><strong>1. Anthropic x SpaceX 算力合作细节</strong></p>
+        <p>据《华尔街日报》和路透社报道，Anthropic 将获得 SpaceX Colossus 1 超级计算集群的全部算力，超过 300 兆瓦。这使 Anthropic 在 AI 算力竞赛中获得了重大优势，直接影响包括 Claude 响应速度和用户使用限制的大幅改善。</p>
+      </div>
+    </div>
+
+    <div class="card card-news">
+      <div class="card-body">
+        <p><strong>2. Claude Agent "Dreaming" 功能正式发布</strong></p>
+        <p>据 Ars Technica 和 XDA Developers 报道，Anthropic 推出了 Claude 托管 Agent 的"Dreaming"功能（研究预览版）。Agent 可以在空闲时回顾历史会话，发现模式并自我改进。这是 AI Agent 从"被动执行"走向"主动学习"的重要里程碑。</p>
+      </div>
+    </div>
+
+    <div class="card card-news">
+      <div class="card-body">
+        <p><strong>3. DeepSeek V4 发布，免费击败数十亿美元系统</strong></p>
+        <p>DeepSeek V4 发布，据多个评测表明其性能超越了多个成本高昂的商业系统，延续了 DeepSeek 系列"以小博大"的特色。开源 AI 的成本效率优势进一步扩大。</p>
+      </div>
+    </div>
+
+    <div class="card card-news">
+      <div class="card-body">
+        <p><strong>4. AI 癌症早期检测取得两项重大突破</strong></p>
+        <p>据 CNN 报道，AI 在癌症早期检测领域取得了两项重大突破。AI 医疗应用正从辅助诊断走向早期预警，有望大幅提升癌症的治愈率。</p>
+      </div>
+    </div>
+
+    <div class="card card-news">
+      <div class="card-body">
+        <p><strong>5. a16z crypto 宣布第五期基金，规模 22 亿美元</strong></p>
+        <p>a16z crypto 宣布完成 Fund 5 的募集，总规模达 22 亿美元。尽管加密市场波动，顶级基金对区块链和 AI 交叉领域的长期押注不减。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
   <div class="footer">
-    <p>AI Builders 资讯速递 | 数据源: follow-builders</p>
+    <p><strong>AI Builders 资讯速递</strong> | 2026年5月7日</p>
+    <p>数据来源：19 位 AI Builder 的 X 动态 | 1 篇官方博客 | 1 期 AI 播客 | 5 条补充资讯</p>
+    <p>追踪名单：Sam Altman, Amjad Masad, Guillermo Rauch, Aaron Levie, Garry Tan, Andrej Karpathy, Alex Albert, Amanda Askell, Ryo Lu, Zara Zhang 等 25 位 AI Builder</p>
+    <p style="margin-top: 8px;">推送频率：工作日每天中午 12:00 | 数据源：<a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a></p>
   </div>
 </body>
 </html>
