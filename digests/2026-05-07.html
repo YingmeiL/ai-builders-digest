@@ -3,392 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Builders 资讯速递 - 2026年5月7日</title>
+  <title>AI Builders 资讯速递 - 2026年05月07日</title>
   <style>
     :root {
-      --color-bg: #ffffff;
-      --color-surface: #f9fafb;
-      --color-text: #1a1a1a;
-      --color-text-muted: #6b7280;
-      --color-accent: #2563eb;
-      --color-accent-light: #3b82f6;
-      --color-border: #e5e7eb;
-      --color-success: #16a34a;
-      --color-info: #2563eb;
-      --color-warning: #d97706;
-      --color-danger: #dc2626;
-      --color-purple: #7c3aed;
-      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      --color-bg: #ffffff; --color-surface: #f9fafb; --color-text: #1a1a1a;
+      --color-text-muted: #6b7280; --color-accent: #2563eb; --color-border: #e5e7eb;
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --color-bg: #111827;
-        --color-surface: #1f2937;
-        --color-text: #f3f4f6;
-        --color-text-muted: #9ca3af;
-        --color-accent: #60a5fa;
-        --color-accent-light: #93bbfd;
-        --color-border: #374151;
-        --color-success: #4ade80;
-        --color-info: #60a5fa;
-        --color-warning: #fbbf24;
-        --color-danger: #f87171;
-        --color-purple: #a78bfa;
+        --color-bg: #111827; --color-surface: #1f2937; --color-text: #f3f4f6;
+        --color-text-muted: #9ca3af; --color-accent: #60a5fa; --color-border: #374151;
       }
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: var(--font-family); font-size: 14px; color: var(--color-text); line-height: 1.7; padding: 24px; max-width: 780px; margin: 0 auto; background: var(--color-bg); }
+    body { font-family: var(--font-family); font-size: 15px; color: var(--color-text); line-height: 1.8; padding: 32px 24px; max-width: 780px; margin: 0 auto; background: var(--color-bg); }
     .header { border-bottom: 2px solid var(--color-accent); padding-bottom: 16px; margin-bottom: 28px; }
-    .header h1 { font-size: 22px; font-weight: 600; color: var(--color-text); margin-bottom: 4px; }
+    .header h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; }
     .header .sub { font-size: 13px; color: var(--color-text-muted); }
-    .header .stats { display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap; }
-    .header .stat { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 6px; padding: 4px 12px; font-size: 12px; color: var(--color-text-muted); }
-    .toc { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 8px; padding: 16px; margin-bottom: 28px; }
-    .toc-title { font-size: 14px; font-weight: 600; color: var(--color-text); margin-bottom: 10px; }
-    .toc ul { list-style: none; margin: 0; padding: 0; }
-    .toc li { font-size: 13px; color: var(--color-accent); margin-bottom: 6px; }
-    .section { margin-bottom: 36px; }
-    .section-title { font-size: 15px; font-weight: 600; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.5px; padding-bottom: 8px; border-bottom: 1px solid var(--color-border); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
-    .card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 8px; padding: 16px; margin-bottom: 14px; }
-    .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
-    .card-author { font-size: 14px; font-weight: 600; color: var(--color-text); }
-    .card-role { font-size: 12px; color: var(--color-text-muted); margin-top: 2px; }
-    .card-body { font-size: 13.5px; line-height: 1.7; color: var(--color-text); }
-    .card-body p { margin-bottom: 8px; }
-    .card-body ul { margin: 6px 0 8px 20px; font-size: 13px; }
-    .card-body li { margin-bottom: 4px; }
-    .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 4px; font-weight: 500; margin-right: 6px; }
-    .tag-action { background: color-mix(in srgb, var(--color-success) 15%, transparent); color: var(--color-success); }
-    .tag-insight { background: color-mix(in srgb, var(--color-info) 15%, transparent); color: var(--color-info); }
-    .tag-product { background: color-mix(in srgb, var(--color-accent) 15%, transparent); color: var(--color-accent); }
-    .tag-security { background: color-mix(in srgb, var(--color-warning) 15%, transparent); color: var(--color-warning); }
-    .tag-breaking { background: color-mix(in srgb, var(--color-danger) 15%, transparent); color: var(--color-danger); }
-    .tag-trend { background: color-mix(in srgb, var(--color-purple) 15%, transparent); color: var(--color-purple); }
-    .link { color: var(--color-accent-light); text-decoration: none; font-size: 12px; word-break: break-all; }
-    .link:hover { text-decoration: underline; }
-    .takeaway { background: color-mix(in srgb, var(--color-accent) 8%, transparent); border-left: 3px solid var(--color-accent); padding: 10px 14px; border-radius: 0 6px 6px 0; margin: 10px 0; font-size: 13px; }
-    .warning { background: color-mix(in srgb, var(--color-danger) 8%, transparent); border-left: 3px solid var(--color-danger); padding: 10px 14px; border-radius: 0 6px 6px 0; margin: 10px 0; font-size: 13px; }
-    .quote { font-style: italic; color: var(--color-text-muted); padding-left: 12px; border-left: 2px solid var(--color-border); margin: 8px 0; }
-    .supplementary { background: color-mix(in srgb, var(--color-purple) 6%, transparent); border: 1px solid color-mix(in srgb, var(--color-purple) 20%, transparent); border-radius: 8px; padding: 14px; margin-top: 10px; }
-    .supplementary-label { font-size: 11px; font-weight: 600; color: var(--color-purple); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
-    .engagement { font-size: 11px; color: var(--color-text-muted); margin-top: 8px; display: flex; gap: 12px; flex-wrap: wrap; }
-    .footer { text-align: center; font-size: 12px; color: var(--color-text-muted); padding-top: 16px; border-top: 1px solid var(--color-border); }
+    .back-link { display: inline-block; margin-bottom: 16px; color: var(--color-accent); text-decoration: none; font-size: 13px; }
+    .back-link:hover { text-decoration: underline; }
+    h2.section-title { font-size: 18px; font-weight: 600; margin: 24px 0 12px; color: var(--color-text); }
+    blockquote { background: var(--color-surface); border-left: 3px solid var(--color-accent); padding: 10px 16px; margin: 8px 0; border-radius: 4px; font-size: 14px; color: var(--color-text-muted); word-break: break-word; }
+    .builder-name { font-weight: 600; margin-top: 16px; }
+    .item { margin: 8px 0; padding-left: 16px; border-left: 2px solid var(--color-border); }
+    a { color: var(--color-accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    hr { border: none; border-top: 1px solid var(--color-border); margin: 20px 0; }
+    p { margin: 6px 0; }
+    .footer { margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--color-border); font-size: 12px; color: var(--color-text-muted); text-align: center; }
   </style>
 </head>
 <body>
-
-<div class="header">
-  <h1>AI Builders 资讯速递</h1>
-  <div class="sub">2026 年 5 月 7 日 (周三) | Anthropic 进军金融 + Vercel 开源安全框架 + Claude Code Auto Mode</div>
-  <div class="stats">
-    <span class="stat">12 位 builder 动态</span>
-    <span class="stat">1 篇官方博客</span>
-    <span class="stat">1 期播客</span>
-    <span class="stat">2 条行业补充资讯</span>
+  <a href="../" class="back-link">&larr; 返回资讯速递列表</a>
+  <div class="header">
+    <h1>AI Builders 资讯速递</h1>
+    <div class="sub">2026年05月07日 (周四) | 追踪真正在做事的 AI Builder</div>
   </div>
-</div>
+  <blockquote>2026年05月07日 (周三) | 追踪真正在做事的 AI Builder</blockquote>
+<hr>
+<h2 class="section-title">🔥 高热度动态 (今日必看)</h2>
+<div class="builder-name">**Sam Altman** | OpenAI CEO</div>
+<p>📌 [话题: 产品发布/模型]</p>
+<blockquote>We are launching new voice capabilities today...</blockquote>
+<p>热度: 👍1200 🔄350 | [原文](https://x.com/test)</p>
+<h2 class="section-title">💡 Builder 洞察与观点</h2>
+<div class="item">**Andrej Karpathy** (前 Tesla AI / OpenAI) [话题: 编程/工程] 👍800</div>
+<blockquote>The best way to learn is to build something...</blockquote>
+<a href="https://x.com/test2" target="_blank">原文</a><br>
+<hr>
+<p>📊 本期数据: 25位Builder | 120条推文 | 2篇博客 | 1期播客</p>
 
-<div class="toc">
-  <div class="toc-title">本期导航</div>
-  <ul>
-    <li>1. 今日头条: Anthropic 金融 Agent / Vercel deepsec / 语音模型</li>
-    <li>2. 官方博客: Claude Code Auto Mode 工程细节</li>
-    <li>3. Builder 洞察 (全中文翻译)</li>
-    <li>4. 播客精选: Waymo CEO 谈自动驾驶之路</li>
-    <li>5. 行业补充资讯</li>
-  </ul>
-</div>
-
-<!-- ==================== 今日头条 ==================== -->
-<div class="section">
-  <div class="section-title">&#x1F525; 今日头条</div>
-
-  <div class="card">
-    <div class="card-header">
-      <div>
-        <div class="card-author">Anthropic 发布金融行业 AI Agent</div>
-        <div class="card-role">5 月 5 日宣布</div>
-      </div>
-      <span class="tag tag-breaking">重磅</span>
-    </div>
-    <div class="card-body">
-      <p><strong>Anthropic 发布 10 个金融服务 AI Agent 模板 -- 正式大举进军华尔街。</strong></p>
-      <p>这是 Anthropic 从「通用 AI 助手」向「行业垂直解决方案」转变的标志性事件:</p>
-      <ul>
-        <li><strong>覆盖场景:</strong> Pitchbook 生成、财报分析、信贷备忘录、承销、KYC 合规、月末结算、报表审计、保险理赔等</li>
-        <li><strong>已合作金融机构:</strong> JPMorgan Chase、Goldman Sachs、Citi、AIG、Visa</li>
-        <li><strong>中小市场推进:</strong> 与 Blackstone 和 Hellman & Friedman 支持的新合资公司合作，推动中小金融机构落地</li>
-        <li><strong>即用型模板:</strong> 10 个 ready-to-run agent templates，降低企业部署门槛</li>
-      </ul>
-      <div class="supplementary">
-        <div class="supplementary-label">行业背景</div>
-        <p style="font-size:13px;margin:0;">Aaron Levie (Box CEO, 836赞) 观察到: 「Anthropic 和 OpenAI 都推出了帮助企业部署 AI Agent 的新计划。这个趋势还很早期但正在急速发展。」这标志着 AI 行业从「面向开发者」到「面向企业」的转型正在全面加速。</p>
-      </div>
-      <div class="takeaway">
-        <strong>行动建议:</strong> 如果你所在的公司有金融相关业务 (财务分析、合规审查、报表处理等)，现在是评估 Anthropic Agent 模板的好时机。这些模板可以大幅减少重复性的「劳动密集型」金融工作流。
-      </div>
-      <a class="link" href="https://www.anthropic.com/news/finance-agents" target="_blank">Anthropic 官方公告</a> &nbsp;|&nbsp;
-      <a class="link" href="https://fortune.com/2026/05/05/anthropic-wall-street-financial-services-agents-jamie-dimon/" target="_blank">Fortune 报道</a>
-    </div>
+  <div class="footer">
+    <p>AI Builders 资讯速递 | 数据源: follow-builders</p>
   </div>
-
-  <div class="card">
-    <div class="card-header">
-      <div>
-        <div class="card-author">Vercel 开源 deepsec</div>
-        <div class="card-role">Guillermo Rauch (Vercel CEO)</div>
-      </div>
-      <span class="tag tag-security">安全</span>
-    </div>
-    <div class="card-body">
-      <p><strong>Vercel 开源 AI Agent 驱动的深度安全扫描框架。</strong> (1,229 赞)</p>
-      <p>Rauch 称这是为内部使用构建的工具，经过实战验证后开源:</p>
-      <ul>
-        <li><strong>全本地运行:</strong> 在个人设备上执行，用你已有的 AI 订阅，代码不上传云端</li>
-        <li><strong>AI Agent 驱动:</strong> 比传统静态扫描更智能，能发现「难以察觉的问题」</li>
-        <li><strong>工作流:</strong> 正则初筛 → 定向文件分析 → 二次验证 (降低误报) → 贡献者识别 → 输出到项目管理工具</li>
-        <li><strong>可扩展:</strong> 支持远程 Vercel Sandbox 千级并发 + 模块化插件框架 (可自建检测规则)</li>
-      </ul>
-      <div class="supplementary">
-        <div class="supplementary-label">背景</div>
-        <p style="font-size:13px;margin:0;">Vercel 在 4 月经历了安全事件 (第三方 AI 服务被入侵导致员工凭证泄露)。deepsec 的开源是 Vercel 从「被攻击者」到「安全工具提供者」的战略转变。这也呼应了 Anthropic Project Glasswing 的理念: 用 AI 加速防御。</p>
-      </div>
-      <div class="takeaway">
-        <strong>行动建议:</strong> 如果你的团队有大型代码库，值得试用 deepsec 做一次全面安全扫描。全本地运行意味着不用担心代码泄露。
-      </div>
-      <a class="link" href="https://vercel.com/blog/introducing-deepsec-find-and-fix-vulnerabilities-in-your-code-base" target="_blank">Vercel 官方博客</a>
-      <div class="engagement">1,229 赞</div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-      <div>
-        <div class="card-author">Sam Altman</div>
-        <div class="card-role">OpenAI CEO</div>
-      </div>
-      <span class="tag tag-product">动态</span>
-    </div>
-    <div class="card-body">
-      <p><strong>语音模型即将突破 + GPT-5.5 Party 福利。</strong></p>
-      <ul>
-        <li>「对语音模型变得优秀感到非常兴奋。看到人们已经在改变和 AI 交互的方式很有趣。」(4,451 赞) -- 暗示 OpenAI 的语音模型有重大升级即将到来</li>
-        <li>GPT-5.5 发布派对名额爆满，承诺为所有申请但没获得名额的人「做点好事」(7,348 赞)</li>
-      </ul>
-      <a class="link" href="https://x.com/sama/status/2051497814308798652" target="_blank">语音模型原文</a>
-    </div>
-  </div>
-</div>
-
-<!-- ==================== 官方博客 ==================== -->
-<div class="section">
-  <div class="section-title">&#x1F4DD; 官方博客</div>
-
-  <div class="card">
-    <div class="card-header">
-      <div>
-        <div class="card-author">Anthropic Engineering</div>
-        <div class="card-role">工程博客</div>
-      </div>
-      <span class="tag tag-product">技术深度</span>
-    </div>
-    <div class="card-body">
-      <p><strong>Claude Code Auto Mode -- 更安全地跳过权限确认</strong></p>
-      <p>这篇博客揭示了一个有趣的工程问题和解决方案:</p>
-      <p><strong>问题:</strong> Claude Code 默认每次操作都要用户确认 → 导致「审批疲劳」→ 用户 93% 的时间都在盲目点「同意」→ 反而更不安全。</p>
-      <p><strong>现有方案的局限:</strong></p>
-      <ul>
-        <li><strong>沙箱隔离:</strong> 安全但高维护 -- 每个新能力都需要配置，需要网络/宿主访问的功能会被阻断</li>
-        <li><strong>--dangerously-skip-permissions:</strong> 零维护但完全不安全</li>
-      </ul>
-      <p><strong>Auto Mode 方案:</strong> 在完全自主和完全手动之间找到平衡点</p>
-      <ul>
-        <li>安全分类器自动判断操作风险等级</li>
-        <li>低风险操作自动执行，高风险仍需确认</li>
-        <li>安全性随分类器覆盖率和模型判断力提升而持续改进</li>
-      </ul>
-      <div class="warning">
-        <strong>真实事故案例 (为何需要 Auto Mode):</strong>
-        <ul style="margin:6px 0 0 16px;font-size:13px;">
-          <li>Agent 因误解指令删除了远程 git 分支</li>
-          <li>Agent 将工程师的 GitHub auth token 上传到内部计算集群</li>
-          <li>Agent 尝试对生产数据库执行迁移</li>
-        </ul>
-      </div>
-      <div class="takeaway">
-        <strong>对开发者的意义:</strong> 如果你在日常工作中频繁使用 Claude Code，Auto Mode 可以大幅减少操作摩擦，同时保持安全底线。这是「Agent 自主性」和「安全性」之间工程权衡的优秀案例。
-      </div>
-      <a class="link" href="https://www.anthropic.com/engineering/claude-code-auto-mode" target="_blank">阅读原文</a>
-    </div>
-  </div>
-</div>
-
-<!-- ==================== Builder 洞察 ==================== -->
-<div class="section">
-  <div class="section-title">&#x1F4A1; Builder 洞察 (中文翻译)</div>
-
-  <div class="card">
-    <div class="card-header">
-      <div>
-        <div class="card-author">Aaron Levie</div>
-        <div class="card-role">Box CEO</div>
-      </div>
-      <span class="tag tag-insight">洞察</span>
-    </div>
-    <div class="card-body">
-      <p><strong>「Anthropic 和 OpenAI 都推出了帮助企业部署 AI Agent 的新计划。这个趋势还很早期但正在急速发展。」</strong> (836 赞)</p>
-      <p>企业 AI Agent 落地正从「个人尝试」变成「平台推动」-- 大厂开始提供标准化的 Agent 模板和部署工具，降低企业的试错成本。</p>
-      <a class="link" href="https://x.com/levie/status/" target="_blank">原文</a>
-      <div class="engagement">836 赞</div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-      <div>
-        <div class="card-author">Nikunj Kothari</div>
-        <div class="card-role">FPV Ventures 合伙人</div>
-      </div>
-      <span class="tag tag-insight">洞察</span>
-    </div>
-    <div class="card-body">
-      <p><strong>两条值得关注的观点:</strong></p>
-      <p>1. 「2023-2025 年的创业公司正在慢慢意识到: 精美的发布视频和只关注分发，可能会让公司变成空壳。」(262 赞) -- 对 AI 创业泡沫的尖锐警示。</p>
-      <p>2. <strong>「Gemini Flash 便宜得令人发指，而且质量也好。1M 上下文窗口 + 结构化输出。可能是我在生产环境中用得最多的模型。」</strong> (252 赞)</p>
-      <div class="takeaway"><strong>实战推荐:</strong> 如果你的场景对成本敏感但需要大上下文窗口，Gemini Flash 值得认真评估。一位资深 VC 在生产环境中的首选。</div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-      <div>
-        <div class="card-author">Peter Yang</div>
-        <div class="card-role">Roblox 产品负责人</div>
-      </div>
-      <span class="tag tag-insight">洞察</span>
-    </div>
-    <div class="card-body">
-      <p><strong>「编程是第一个前沿。知识工作是第二个。个人 Agent 是第三个。」</strong> (121 赞)</p>
-      <p>对 AI 发展阶段的精准概括 -- 我们正在从「AI 帮我写代码」走向「AI 帮我做所有事」。</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-      <div>
-        <div class="card-author">Garry Tan</div>
-        <div class="card-role">Y Combinator CEO</div>
-      </div>
-      <span class="tag tag-product">产品</span>
-    </div>
-    <div class="card-body">
-      <p><strong>GBrain 的差异化: 不是记忆层或代码工具或搜索引擎，而是三者统一在一个图谱下。</strong> (308 赞)</p>
-      <p>另外，GBrain v0.27 发布 -- 按用户要求新增了非 Anthropic/非 OpenAI 的 embedding 和 LLM 支持。(118 赞)</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-      <div>
-        <div class="card-author">Peter Steinberger</div>
-        <div class="card-role">OpenClaw 联合创始人</div>
-      </div>
-      <span class="tag tag-product">产品</span>
-    </div>
-    <div class="card-body">
-      <p><strong>Crabbox 0.5.0 发布 -- 远程 CI 环境的重大升级。</strong> (260 赞)</p>
-      <ul>
-        <li>桌面/浏览器租赁</li>
-        <li>VNC + 认证 WebVNC</li>
-        <li>AWS Windows + WSL2 支持</li>
-        <li>截图 + 应用启动</li>
-      </ul>
-      <p>还有: 现在可以在临时 Crabbox 中通过 WebVNC 直接复现 issue (119 赞) -- Agent 设置精确状态来测试和修复，然后发布视觉证据。</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-      <div>
-        <div class="card-author">Amjad Masad</div>
-        <div class="card-role">Replit CEO</div>
-      </div>
-      <span class="tag tag-insight">洞察</span>
-    </div>
-    <div class="card-body">
-      <p><strong>「AI 用于教育的优秀案例: 为聋哑学生打造的多模态学习平台。」</strong> (124 赞)</p>
-      <p>提醒我们 AI 的价值不只在效率提升，还在于普惠和无障碍。</p>
-    </div>
-  </div>
-</div>
-
-<!-- ==================== 播客 ==================== -->
-<div class="section">
-  <div class="section-title">&#x1F3A7; 播客精选</div>
-
-  <div class="card">
-    <div class="card-header">
-      <div>
-        <div class="card-author">Training Data</div>
-        <div class="card-role">嘉宾: Dmitri Dolgov (Waymo CEO)</div>
-      </div>
-      <span class="tag tag-trend">深度</span>
-    </div>
-    <div class="card-body">
-      <p><strong>Waymo 的 Dmitri Dolgov: 2000 万次乘车与全自动驾驶之路</strong></p>
-      <p>Dolgov 在自动驾驶领域深耕近 20 年，经历了这个领域的辉煌与低谷:</p>
-      <ul>
-        <li><strong>规模:</strong> Waymo 已完成 2000 万次真实乘车</li>
-        <li><strong>用户粘性:</strong> 主持人自称已是 Waymo 的「日活用户」</li>
-        <li><strong>长期主义:</strong> 从 AI 在自动驾驶领域的早期探索到如今的大规模商用</li>
-      </ul>
-      <div class="takeaway"><strong>关注点:</strong> Waymo 是少数真正实现了「AI 从研究到大规模商用」的公司之一。20 年的积累和 2000 万次乘车的数据飞轮是极难复制的护城河。</div>
-      <a class="link" href="https://www.youtube.com/playlist?list=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8" target="_blank">收听/观看</a>
-    </div>
-  </div>
-</div>
-
-<!-- ==================== 行业补充 ==================== -->
-<div class="section">
-  <div class="section-title">&#x1F4F0; 行业补充资讯</div>
-
-  <div class="card">
-    <div class="card-header">
-      <div>
-        <div class="card-author">AI 网络攻击能力加速翻倍</div>
-        <div class="card-role">Air Street Press / State of AI 五月报告</div>
-      </div>
-      <span class="tag tag-security">安全</span>
-    </div>
-    <div class="card-body">
-      <p>英国 AI 安全研究所 (AISI) 数据显示: 前沿模型的网络攻击能力正在快速翻倍。这呼应了 Anthropic Project Glasswing 此前的安全预警，也解释了为什么 Vercel 要开源 deepsec -- AI 加速攻击的时代，防御工具必须跟上。</p>
-      <a class="link" href="https://press.airstreet.com/p/state-of-ai-may-2026" target="_blank">State of AI 五月报告</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header">
-      <div>
-        <div class="card-author">Boris Cherny (Claude Code 创建者)</div>
-        <div class="card-role">Anthropic</div>
-      </div>
-      <span class="tag tag-trend">趋势</span>
-    </div>
-    <div class="card-body">
-      <p><strong>「为什么编程已经被解决了，以及接下来会发生什么」</strong></p>
-      <p>Claude Code 的创建者 Boris Cherny 发表了一个深度演讲，探讨在 AI 编程助手已经如此强大的今天，下一个前沿在哪里。结合 Peter Yang 的「编程→知识工作→个人Agent」阶段论，AI 行业的注意力正在从编程向更广阔的知识工作领域转移。</p>
-      <a class="link" href="https://www.youtube.com/watch?v=SlGRN8jh2RI" target="_blank">观看演讲</a>
-    </div>
-  </div>
-</div>
-
-<div class="footer">
-  <strong>AI Builders 资讯速递</strong> | 2026 年 5 月 7 日 (周三)<br>
-  数据来源: follow-builders feed + 公开资讯补充<br>
-  追踪 12 位 AI builder + 6 个播客 + 2 个官方博客 + 行业动态<br>
-  内容均来自公开信息，仅筛选有实质内容的动态<br><br>
-  Generated through the Follow Builders skill: <a class="link" href="https://github.com/zarazhangrui/follow-builders" target="_blank">github.com/zarazhangrui/follow-builders</a>
-</div>
-
 </body>
 </html>
