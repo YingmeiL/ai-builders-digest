@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Builders 资讯速递 - 2026年5月8日</title>
+  <style>
+    :root {
+      --color-bg: #ffffff;
+      --color-surface: #f9fafb;
+      --color-surface-alt: #f0f4ff;
+      --color-text: #1a1a1a;
+      --color-text-muted: #6b7280;
+      --color-accent: #2563eb;
+      --color-border: #e5e7eb;
+      --color-success: #16a34a;
+      --color-warning: #d97706;
+      --color-danger: #dc2626;
+      --color-purple: #7c3aed;
+      --color-orange: #ea580c;
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-bg: #111827;
+        --color-surface: #1f2937;
+        --color-surface-alt: #1e2a4a;
+        --color-text: #f3f4f6;
+        --color-text-muted: #9ca3af;
+        --color-accent: #60a5fa;
+        --color-border: #374151;
+        --color-success: #4ade80;
+        --color-warning: #fbbf24;
+        --color-danger: #f87171;
+        --color-purple: #a78bfa;
+        --color-orange: #fb923c;
+      }
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: var(--font-family); font-size: 15px; color: var(--color-text); line-height: 1.8; padding: 32px 24px; max-width: 800px; margin: 0 auto; background: var(--color-bg); }
+    a { color: var(--color-accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .back-link { display: inline-block; margin-bottom: 16px; color: var(--color-accent); font-size: 13px; }
+    .header { border-bottom: 3px solid var(--color-accent); padding-bottom: 20px; margin-bottom: 28px; }
+    .header h1 { font-size: 26px; font-weight: 700; margin-bottom: 4px; }
+    .header .sub { font-size: 14px; color: var(--color-text-muted); }
+    .header .stats { display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap; }
+    .header .stat { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 6px; padding: 4px 12px; font-size: 12px; color: var(--color-text-muted); }
+    .toc { background: var(--color-surface-alt); border: 1px solid var(--color-border); border-radius: 10px; padding: 18px 22px; margin-bottom: 32px; }
+    .toc-title { font-size: 15px; font-weight: 600; margin-bottom: 10px; }
+    .toc ul { list-style: none; }
+    .toc li { font-size: 13px; margin-bottom: 6px; }
+    .toc li a { color: var(--color-accent); }
+    .toc-tag { display: inline-block; font-size: 11px; padding: 1px 6px; border-radius: 3px; margin-left: 6px; font-weight: 500; }
+    .hot { background: #fef2f2; color: var(--color-danger); }
+    .new { background: #f0fdf4; color: var(--color-success); }
+    .insight { background: #eff6ff; color: var(--color-accent); }
+    .section { margin-bottom: 36px; }
+    .section-title { font-size: 19px; font-weight: 700; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--color-border); }
+    .card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 10px; padding: 18px 20px; margin-bottom: 16px; }
+    .card:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+    .card-hot { border-left: 4px solid var(--color-danger); }
+    .card-insight { border-left: 4px solid var(--color-accent); }
+    .card-podcast { border-left: 4px solid var(--color-orange); }
+    .card-news { border-left: 4px solid var(--color-success); }
+    .card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; flex-wrap: wrap; gap: 6px; }
+    .card-name { font-weight: 700; font-size: 15px; }
+    .card-role { font-size: 12px; color: var(--color-text-muted); background: var(--color-bg); padding: 2px 8px; border-radius: 4px; border: 1px solid var(--color-border); }
+    .card-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
+    .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 4px; font-weight: 500; background: var(--color-surface-alt); color: var(--color-accent); border: 1px solid var(--color-border); }
+    .tag-hot { background: #fef2f2; color: var(--color-danger); border-color: #fecaca; }
+    .tag-product { background: #f0fdf4; color: var(--color-success); border-color: #bbf7d0; }
+    .tag-infra { background: #fefce8; color: var(--color-warning); border-color: #fef08a; }
+    .card-body { font-size: 14px; color: var(--color-text); line-height: 1.75; margin-bottom: 10px; }
+    .card-body p { margin-bottom: 8px; }
+    .card-context { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 6px; padding: 10px 14px; font-size: 13px; color: var(--color-text-muted); margin-bottom: 10px; line-height: 1.6; }
+    .card-context strong { color: var(--color-text); }
+    .card-footer { display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: var(--color-text-muted); flex-wrap: wrap; gap: 6px; }
+    .engagement span { margin-right: 10px; }
+    .divider { border: none; border-top: 1px solid var(--color-border); margin: 28px 0; }
+    .quote { background: var(--color-surface); border-left: 3px solid var(--color-accent); padding: 12px 16px; margin: 10px 0; border-radius: 4px; font-size: 14px; font-style: italic; color: var(--color-text-muted); }
+    .footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 2px solid var(--color-border); font-size: 12px; color: var(--color-text-muted); }
+    .footer p { margin-bottom: 4px; }
+    @media (max-width: 600px) { body { padding: 16px; } .header h1 { font-size: 22px; } .card { padding: 14px 16px; } }
+  </style>
+</head>
+<body>
+  <a href="../" class="back-link">&larr; 返回资讯速递列表</a>
+
+  <div class="header">
+    <h1>AI Builders 资讯速递</h1>
+    <div class="sub">2026年5月8日 (周四) | 追踪真正在做事的 AI Builder</div>
+    <div class="stats">
+      <span class="stat">6 位 Builder 动态</span>
+      <span class="stat">1 期播客</span>
+      <span class="stat">5 条行业补充资讯</span>
+      <span class="stat">核心主题: Anthropic 80x 增长</span>
+    </div>
+  </div>
+
+  <div class="toc">
+    <div class="toc-title">本期导航</div>
+    <ul>
+      <li><a href="#hot">🔥 今日头条</a> — Dario 80x 增长 / Claude Dreaming / Outcomes 质量控制 <span class="toc-tag hot">重磅</span></li>
+      <li><a href="#insights">💡 Builder 洞察</a> — 5 位 Builder 的一手观察与行业观点 <span class="toc-tag insight">深度</span></li>
+      <li><a href="#podcast">🎧 播客精选</a> — Boris Cherny: 编程的"印刷术时刻" <span class="toc-tag new">必听</span></li>
+      <li><a href="#news">📰 行业资讯补充</a> — AI 网络攻击 / OpenAI 语音 / 安全威胁增长</li>
+    </ul>
+  </div>
+
+  <!-- 今日头条 -->
+  <div class="section" id="hot">
+    <h2 class="section-title">🔥 今日头条</h2>
+
+    <div class="card card-hot">
+      <div class="card-header">
+        <span class="card-name">Dario Amodei 公开数据: Anthropic 80 倍增长</span>
+        <span class="card-role">Anthropic CEO</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag tag-hot">🔥 重磅</span>
+        <span class="tag tag-infra">行业里程碑</span>
+        <span class="tag">增长数据</span>
+      </div>
+      <div class="card-body">
+        <p>Anthropic CEO Dario Amodei 在 <strong>Code with Claude</strong> 大会上首次公开透露：公司今年早些时候在使用量和营收上实现了 <strong>80 倍增长</strong>。他表示这一增速"疯狂到难以应对"，并强调将持续"获取一切能获取的算力"。</p>
+        <p>CNBC、纽约时报、Business Insider 等主流媒体均头版报道。这是 AI 行业迄今公开披露的最惊人增长数字之一。</p>
+      </div>
+      <div class="quote">
+        "我从 2015 年开始训练这些模型，当时它们真的很蠢。" — Dario Amodei<br>
+        "为指数级增长而构建。有些产品用当前模型不可能实现，但未来的模型可以。" — Daniela Amodei
+      </div>
+      <div class="card-context">
+        <strong>背景解读：</strong>80x 增长的背后是 Claude 从一个聊天产品进化为完整的开发者平台（Claude Code、Managed Agents、API）。结合昨日公布的 SpaceX Colossus 算力合作，Anthropic 正在"增长+算力"双轮驱动下快速拉开与竞争者的距离。Business Insider 称 Dario 开玩笑说增长"太快了，我们自己都受不了"。
+      </div>
+      <div class="card-footer">
+        <div class="engagement">
+          <span>👍 来源: Peter Yang (149赞)</span>
+          <span>🔄 Thariq 转发 (1,319赞)</span>
+        </div>
+        <a href="https://x.com/petergyang/status/2052117599744672195" target="_blank">查看原文 &rarr;</a>
+      </div>
+    </div>
+
+    <div class="card card-hot">
+      <div class="card-header">
+        <span class="card-name">Claude Dreaming: Agent 学会"做梦"自我进化</span>
+        <span class="card-role">Claude 官方</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag tag-hot">🔥 热门</span>
+        <span class="tag tag-product">全新功能</span>
+        <span class="tag">Agent 自主学习</span>
+      </div>
+      <div class="card-body">
+        <p><strong>Dreaming（做梦）</strong>功能正式发布：Claude 托管 Agent 可以在空闲时回顾过去的会话记录，提取行为模式，自主整理记忆，从而实现跨会话的持续学习和自我改进。</p>
+        <p>类似人类在睡眠中巩固记忆 — Agent 不再是"用完即忘"的工具，而是可以持续成长的智能体。目前作为研究预览版开放申请。</p>
+      </div>
+      <div class="card-context">
+        <strong>延伸：</strong>Ars Technica 报道称 Dreaming 此前已被泄露，正式发布说明 Anthropic 的 Agent 路线图执行力极强。WaveSpeed 的技术分析指出，Dreaming 可能是 Agent 从"工具"走向"同事"的关键转折点。
+      </div>
+      <div class="card-footer">
+        <div class="engagement"><span>👍 1,124</span><span>🔄 52</span></div>
+        <a href="https://x.com/claudeai/status/2052067400690851842" target="_blank">查看原文 &rarr;</a>
+      </div>
+    </div>
+
+    <div class="card card-hot">
+      <div class="card-header">
+        <span class="card-name">Claude Outcomes: Agent 输出质量可量化</span>
+        <span class="card-role">Claude 官方</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag tag-product">全新功能</span>
+        <span class="tag">质量控制</span>
+        <span class="tag">企业级</span>
+      </div>
+      <div class="card-body">
+        <p><strong>Outcomes</strong> 让你为 Agent 输出设置标准：你编写评分规则（rubric），一个独立的评估 Agent 检查输出质量，工作 Agent 会反复迭代直到达到你设定的标准。完成后通过 Webhook 通知。</p>
+        <p>这解决了 AI Agent 部署中最大的痛点之一：<strong>"怎么保证输出质量一致且可靠"</strong>。对企业级 Agent 应用意义重大。</p>
+      </div>
+      <div class="card-footer">
+        <div class="engagement"><span>👍 580</span><span>🔄 12</span></div>
+        <a href="https://x.com/claudeai/status/2052067403228455419" target="_blank">查看原文 &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Builder 洞察 -->
+  <div class="section" id="insights">
+    <h2 class="section-title">💡 Builder 洞察与观点</h2>
+
+    <div class="card card-insight">
+      <div class="card-header">
+        <span class="card-name">Thariq</span>
+        <span class="card-role">Anthropic 工程师</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag tag-infra">算力战略</span>
+        <span class="tag tag-hot">爆款</span>
+      </div>
+      <div class="card-body">
+        <p>引用 Dario 原话：<strong>"我们每天都在努力获取更多算力传递给你们，如果需要时间我们很抱歉，但我们会尽可能获取一切能获取的。"</strong></p>
+        <p>这条推文获得 1,319 赞，体现了 Anthropic 当前最大的战略焦点：算力就是一切，而且要把算力的好处直接传递给终端用户。</p>
+      </div>
+      <div class="card-footer">
+        <div class="engagement"><span>👍 1,319</span><span>🔄 45</span></div>
+        <a href="https://x.com/trq212/status/2052250816720056604" target="_blank">查看原文 &rarr;</a>
+      </div>
+    </div>
+
+    <div class="card card-insight">
+      <div class="card-header">
+        <span class="card-name">Peter Yang</span>
+        <span class="card-role">Roblox 产品负责人</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag">创始人金句</span>
+        <span class="tag">产品思维</span>
+      </div>
+      <div class="card-body">
+        <p>Peter 分享了 Dario 和 Daniela 在 Code with Claude 大会上的核心金句：</p>
+        <p>- "我从 2015 年开始训练这些模型，它们当时真的很蠢"</p>
+        <p>- "为指数级增长而构建 — 有些产品用当前模型不可能实现，但用未来的模型可以"</p>
+        <p><strong>启发：</strong>不要用今天的 AI 能力去限制产品想象力，而要为 AI 的指数级进步预留空间。</p>
+      </div>
+      <div class="card-footer">
+        <div class="engagement"><span>👍 100</span><span>🔄 3</span></div>
+        <a href="https://x.com/petergyang/status/2052123472583864780" target="_blank">查看原文 &rarr;</a>
+      </div>
+    </div>
+
+    <div class="card card-insight">
+      <div class="card-header">
+        <span class="card-name">Garry Tan</span>
+        <span class="card-role">Y Combinator CEO</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag">硅谷文化</span>
+        <span class="tag">执行力</span>
+      </div>
+      <div class="card-body">
+        <p>称赞某位行业人物/产品像<strong>《低俗小说》里的 "The Wolf"</strong>（Winston Wolfe，剧中的"问题解决专家"）。</p>
+        <p>Y Combinator CEO 对极强执行力的认可。在 AI 时代，能快速解决问题的人和产品比以往更有价值。</p>
+      </div>
+      <div class="card-footer">
+        <div class="engagement"><span>👍 165</span><span>🔄 9</span></div>
+        <a href="https://x.com/garrytan/status/2052007711601291602" target="_blank">查看原文 &rarr;</a>
+      </div>
+    </div>
+
+    <div class="card card-insight">
+      <div class="card-header">
+        <span class="card-name">Zara Zhang</span>
+        <span class="card-role">Builder / follow-builders 作者</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag tag-product">Claude Code</span>
+        <span class="tag">未来工作方式</span>
+      </div>
+      <div class="card-body">
+        <p>Zara 总结了 Boris Cherny (Claude Code 创始人) 访谈的最精华部分：</p>
+        <p><strong>1.</strong> Boris 轻描淡写地提到他夜间运行"数千个" Agent</p>
+        <p><strong>2.</strong> Boris 现在几乎完全在手机上使用 Claude Code</p>
+        <p><strong>3.</strong> "编程将成为新的读写能力" — 每个人都将具备编程能力</p>
+      </div>
+      <div class="card-context">
+        <strong>延伸：</strong>据 Medium 报道，Boris 自 2025 年 11 月起没有手动写过一行代码。B站和红杉资本均发布了这场访谈的分析。这预示着 AI 工程师的工作方式正发生根本转变：从"写代码"到"指挥 Agent 编队"。
+      </div>
+      <div class="card-footer">
+        <div class="engagement"><span>👍 37</span><span>🔄 6</span></div>
+        <a href="https://x.com/zarazhangrui/status/2052277868319916402" target="_blank">查看原文 &rarr;</a>
+      </div>
+    </div>
+
+    <div class="card card-insight">
+      <div class="card-header">
+        <span class="card-name">Dan Shipper</span>
+        <span class="card-role">Every CEO</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag">开发者大会</span>
+        <span class="tag">社区</span>
+      </div>
+      <div class="card-body">
+        <p>Dan Shipper 亲自参加 Code with Claude 开发者大会。作为 AI 内容创作领域最有影响力的意见领袖之一，他的到场说明 Anthropic 的开发者生态正在从纯技术圈向更广泛的创作者和商业领袖扩展。</p>
+      </div>
+      <div class="card-footer">
+        <div class="engagement"><span>👍 73</span><span>🔄 2</span></div>
+        <a href="https://x.com/danshipper/status/2052050161388634197" target="_blank">查看原文 &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- 播客 -->
+  <div class="section" id="podcast">
+    <h2 class="section-title">🎧 播客精选</h2>
+
+    <div class="card card-podcast">
+      <div class="card-header">
+        <span class="card-name">Training Data — Boris Cherny: 编程的"印刷术时刻"</span>
+        <span class="card-role">红杉 AI Ascent 2026</span>
+      </div>
+      <div class="card-tags">
+        <span class="tag tag-product">Claude Code</span>
+        <span class="tag">编程范式变革</span>
+        <span class="tag">Agent 工作流</span>
+      </div>
+      <div class="card-body">
+        <p>Claude Code 的创始人 <strong>Boris Cherny</strong> 在红杉 AI Ascent 2026 大会上发表演讲。演讲一开始就问听众："谁有 Claude Code 上瘾症？"</p>
+        <p><strong>核心观点：</strong></p>
+        <p>🔹 Boris 每晚运行"数千个" Agent 完成工作，自 2025 年 11 月起不再手写代码</p>
+        <p>🔹 编程正在经历类似"印刷术发明"级别的范式转变 — 从少数人的技能变为人人可得</p>
+        <p>🔹 Claude Code 日常使用已完全转移到手机端</p>
+        <p>🔹 <strong>"编程将成为新的读写能力"</strong> — 就像阅读曾经是精英特权，编程也将普及化</p>
+        <p>🔹 未来的工程师角色将从"写代码"转向"设计系统架构 + 管理 Agent 编队"</p>
+      </div>
+      <div class="card-context">
+        <strong>行业反响：</strong>Medium 专题文章称 Boris 是"构建了 Claude Code 却不再自己写代码的人"。B站上中文解读视频已获数万播放。这场演讲被视为 2026 年关于"编程未来"最重要的行业演讲之一。
+      </div>
+      <div class="card-footer">
+        <a href="https://www.youtube.com/playlist?list=PLOhHNjZItNnMm5tdW61JpnyxeYH5NDDx8" target="_blank">观看完整演讲 &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- 行业资讯补充 -->
+  <div class="section" id="news">
+    <h2 class="section-title">📰 行业资讯补充</h2>
+
+    <div class="card card-news">
+      <div class="card-body">
+        <p><strong>1. Anthropic 增长数据震惊行业</strong></p>
+        <p>CNBC 和纽约时报均以头版报道 Dario Amodei 透露的 80 倍增长数据。Business Insider 称 Dario 开玩笑说增长"太快了难以应对"。这一数字证实了 Claude 在开发者市场的爆发式增长，远超市场此前预期。</p>
+      </div>
+    </div>
+
+    <div class="card card-news">
+      <div class="card-body">
+        <p><strong>2. Claude Managed Agents 四大更新同步发布</strong></p>
+        <p>除 Dreaming 和 Outcomes 外，还包括：多 Agent 编排（一个 Agent 协调多个子 Agent）和 Webhook 集成通知。这使 Claude 成为目前功能最完整的企业级 Agent 平台之一。</p>
+      </div>
+    </div>
+
+    <div class="card card-news">
+      <div class="card-body">
+        <p><strong>3. 前沿 AI 突破网络攻击"红线"</strong></p>
+        <p>Nathan Benaich 的《State of AI 2026年5月刊》指出，前沿 AI 模型已跨越进攻性网络攻击能力的关键门槛。AI 不仅能防御，也开始具备发动复杂网络攻击的能力，引发安全界严重关切。</p>
+      </div>
+    </div>
+
+    <div class="card card-news">
+      <div class="card-body">
+        <p><strong>4. 英国 DSIT 警告 AI 驱动的网络威胁快速增长</strong></p>
+        <p>英国科学创新技术部 (DSIT) 发布警告称，AI 赋能的网络攻击频率和复杂度正快速增加。企业需要将 AI 安全防御纳入核心基础设施规划。</p>
+      </div>
+    </div>
+
+    <div class="card card-news">
+      <div class="card-body">
+        <p><strong>5. OpenAI 发布新语音智能功能</strong></p>
+        <p>OpenAI 推出新一代语音能力，进一步拓展多模态交互的边界。语音 AI 正从简单的语音转文字走向真正的语音智能交互，这将为 AI 助手的使用场景带来新的可能。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p><strong>AI Builders 资讯速递</strong> | 2026年5月8日</p>
+    <p>数据来源：6 位 AI Builder 的 X 动态 | 1 期播客 (Training Data) | 5 条补充资讯</p>
+    <p>追踪名单：Sam Altman, Amjad Masad, Guillermo Rauch, Aaron Levie, Garry Tan, Andrej Karpathy, Alex Albert, Amanda Askell, Ryo Lu, Zara Zhang 等 25 位 AI Builder</p>
+    <p style="margin-top: 8px;">推送频率：工作日每天中午 12:00 | 数据源：<a href="https://github.com/zarazhangrui/follow-builders" target="_blank">follow-builders</a></p>
+  </div>
+</body>
+</html>
